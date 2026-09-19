@@ -1,17 +1,45 @@
 aid: airmart
 name: Airmart
-description: 'Airmart is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Airmart (goairmart.com) is a Redwood City, California e-commerce platform founded in 2018 that lets
+  small sellers such as home bakers, farms, restaurants, cottage-food makers, creators and community group buys
+  open a link-based online storefront, take orders and payments (Stripe card checkout, PayPal, Venmo, Zelle, cash),
+  manage customers and marketing, and fulfil through pickup, shipping, DoorDash on-demand delivery or its own
+  route-planned delivery service. Sellers run their shop from my.goairmart.com or the Airmart mobile apps and
+  buyers shop at shop.goairmart.com; plans start at a free Basic tier with a Standard plan at $19/month
+  ($16/month billed annually). As of this profile Airmart publishes no public developer program, API
+  documentation, SDK, webhooks or machine-readable contract; api.goairmart.com and ts-api.goairmart.com are
+  private first-party backends for its own web and mobile apps.
 url: https://raw.githubusercontent.com/api-evangelist/airmart/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: 'enrichment pass 2026-09-19: full contract discovery run, no public API surface found'
 specificationVersion: '0.20'
 created: '2026-09-19'
 modified: '2026-09-19'
 tags:
+- E-Commerce
+- Commerce
+- Online Storefront
+- Social Commerce
+- Payments
+- Delivery
+- Small Business
+- Food
+- United States
 - Company
+tags_raw:
+- E-Commerce
+- Commerce
+- Online Storefront
+- Social Commerce
+- Payments
+- Delivery
+- Small Business
+- Food
+- United States
+- Company
+image: https://shop.goairmart.com/logo/logo_black_text.svg
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +47,58 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/airmart-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.goairmart.com/
+- type: Blog
+  url: https://goairmart.com/articles/
+- type: BlogRSS
+  url: https://goairmart.com/articles/feed/
+- type: Pricing
+  url: https://shop.goairmart.com/en/lp/pricing
+- type: SignUp
+  url: https://shop.goairmart.com/en/s/signup
+- type: Login
+  url: https://my.goairmart.com/login
+- type: Support
+  url: https://airmart.notion.site/Help-Center-eff67628703a45db9108ddd3e55e0002
+- type: TermsOfService
+  url: https://shop.goairmart.com/en/s/terms
+- type: PrivacyPolicy
+  url: https://shop.goairmart.com/en/s/privacy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/goairmart
+- type: Instagram
+  url: https://www.instagram.com/goairmart/
+- type: MobileApp
+  url: https://play.google.com/store/apps/details?id=com.goairmart.airmart_customer_flutter
+- type: Plans
+  url: plans/airmart-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/airmart-llms.txt
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: 'Airmart ships a seller storefront product with no developer program: goairmart.com is a Next.js SPA whose /developers, /docs and /api paths return its 404 page, developers.goairmart.com and docs.goairmart.com wildcard-redirect into the storefront, api.goairmart.com and ts-api.goairmart.com are private NestJS backends answering every probed path with {"statusCode":404} (no OpenAPI, GraphQL, MCP or agent card), and no SDK exists on npm, PyPI or GitHub.'
+  evidence:
+  - url: https://www.goairmart.com/developers
+    status: 404
+  - url: https://developers.goairmart.com/
+    status: 302
+  - url: https://ts-api.goairmart.com/openapi.json
+    status: 404
+  - url: https://api.goairmart.com/openapi.json
+    status: 404
+  - url: https://ts-api.goairmart.com/graphql
+    status: 404
+  - url: https://www.goairmart.com/.well-known/api-catalog
+    status: 404
+  - url: https://shop.goairmart.com/en/lp/pricing
+    status: 200
+  checked: '2026-09-19'

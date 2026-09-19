@@ -1,0 +1,279 @@
+generated: '2026-09-19'
+method: probed
+source: live GET of the named /.well-known/ path list on every host this record knows (registrable domain, www,
+  shop, my, group, api and ts-api subdomains)
+hit_count: 0
+note: 'No host serves a real discovery document. goairmart.com, www, my.goairmart.com, api.goairmart.com and ts-api.goairmart.com
+  return HTTP 404 on every named path and on the negative-control path (true absences). shop.goairmart.com and group.goairmart.com
+  answer HTTP 200 with the Next.js storefront SPA shell (text/html, title "Airmart") for EVERY path including the
+  random negative-control path, so each 200 there is a catch-all false positive, not a document. No WellKnown, SecurityTxt
+  or AgentCard pointer is emitted: this file records an absence.'
+hosts:
+- host: https://goairmart.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 404
+    control: true
+- host: https://www.goairmart.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 404
+    control: true
+- host: https://shop.goairmart.com
+  path_echo_control: failed (catch-all 200 SPA shell)
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/api-catalog
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/agent.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/apis.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /apis.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /apis.yml
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+    control: true
+- host: https://my.goairmart.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 404
+    control: true
+- host: https://group.goairmart.com
+  path_echo_control: failed (catch-all 200 SPA shell)
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/api-catalog
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/agent.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/apis.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /apis.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /apis.yml
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 200
+    note: HTTP 200 but the body is the shop.goairmart.com Next.js SPA shell (text/html), not a document; treated
+      as a miss
+    shell: true
+    control: true
+- host: https://api.goairmart.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 404
+    control: true
+- host: https://ts-api.goairmart.com
+  path_echo_control: passed
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/airmart-negative-control-3b9e18e6.json
+    status: 404
+    control: true

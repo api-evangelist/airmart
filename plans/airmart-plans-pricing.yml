@@ -1,0 +1,58 @@
+generated: '2026-09-19'
+method: searched
+source: https://shop.goairmart.com/en/lp/pricing
+name: Airmart Plans and Pricing
+description: >-
+  Airmart sells seller storefront subscriptions, not API access. The pricing page (a JavaScript-rendered
+  Next.js route whose server-side metadata reads "Pricing for Airmart e-commerce plans. Choose from Basic,
+  Standard, or Premium store plans. Starting at $0/month. Pay monthly or purchase an annual subscription.")
+  loads the tier table dynamically from the private seller API, so only the values stated in the page's
+  own shipped text (its FAQ and interface strings) are recorded here. Premium is named but its price is not
+  stated in any text a crawler can read, so it is recorded with price null. Payment-processing fees are
+  per-transaction pass-through rates, not plan limits. No plan grants API access, keys, webhooks or rate
+  limits — there is no developer program to price.
+plan_count: 3
+self_serve: true
+free_tier: true
+free_trial: 14-day free trial on the Standard plan; billing starts after the trial unless cancelled
+plans:
+- id: basic
+  name: Basic
+  type: free
+  price: 0
+  currency: USD
+  billing_period: month
+  note: '"Open Free Shop" tier; the page states plans start at $0/month. Feature list not readable without script execution.'
+- id: standard
+  name: Standard
+  type: subscription
+  price: 19
+  currency: USD
+  billing_period: month
+  annual_price: 192
+  annual_effective_monthly: 16
+  note: 'FAQ text: "Our standard plan is $192 per year or $19 per month. Every user gets a 14-day free trial, and you will only be charged after the trial period ends." Interface strings: "$16 per month (billed annually)" and "(Save 15%)" on the annual toggle; unlocks store themes/website builder, marketing tools and other gated features.'
+- id: premium
+  name: Premium
+  type: subscription
+  price: null
+  currency: USD
+  billing_period: null
+  note: 'Named in the page metadata and interface ("Premium plan", "Premium annual plan", "Upgrade to Premium" — fulfillment and last-mile delivery, enhanced operational efficiency) but no price appears in crawlable text; loaded from the seller API at runtime.'
+fees:
+- name: Online credit card checkout
+  price: 3% + $0.30 per successful card charge (+1% for international cards)
+  note: 'Interface strings also cite "2.9% + 30c" for online card checkout, and an optional 0.25% + $0.25 Stripe payout fee; processing is via Stripe (Airmart states it charges no additional fee beyond Stripe for in-store payments).'
+- name: Commission on sales
+  price: 0%
+  note: '"0% Commission" and "3rd party checkouts with 0% transaction fees (Venmo, PayPal, Zelle, cash)".'
+- name: DoorDash on-demand delivery
+  price: $12-16 per delivery, 15-mile radius
+  note: 'Charged by DoorDash through the Airmart integration; can be split with the customer.'
+probes:
+- url: https://shop.goairmart.com/en/lp/pricing
+  status: 200
+  note: real route (distinct title and description); tier table is JS-rendered from the private API
+- url: https://shop.goairmart.com/en/s/paywall/plan
+  status: 200
+  note: in-app plan picker, JS-rendered

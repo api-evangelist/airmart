@@ -64,5 +64,19 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Airmart is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+Airmart (goairmart.com) is a Redwood City, California e-commerce platform founded in 2018 that lets small sellers — home bakers, farms, restaurants, cottage-food makers, creators and community group buys — open a link-based online storefront, take orders and payments (Stripe card checkout, PayPal, Venmo, Zelle, cash), manage customers and marketing, and fulfil through pickup, shipping, DoorDash on-demand delivery or Airmart's own route-planned delivery service.
+
+**API surface:** none published. A full contract-discovery pass on 2026-09-19 (goairmart.com, www, shop, my, group, api and ts-api hosts) found no developer program, OpenAPI, GraphQL, AsyncAPI, MCP server, A2A agent card, SDK or `/.well-known/` discovery document. `api.goairmart.com` and `ts-api.goairmart.com` are private first-party backends for Airmart's own web and mobile apps.
+
+- Website: https://www.goairmart.com/
+- Pricing: https://shop.goairmart.com/en/lp/pricing
+- Help Center: https://airmart.notion.site/Help-Center-eff67628703a45db9108ddd3e55e0002
+- Blog: https://goairmart.com/articles/
+
+## Artifacts
+
+- `plans/airmart-plans-pricing.yml` — Basic / Standard / Premium store plans and fees as published (searched)
+- `security/airmart-domain-security.yml` — TLS, HSTS, DNSSEC, CAA, SPF, DMARC (probed)
+- `well-known/airmart-well-known.yml` — every discovery path probed on seven hosts; all absent (probed)
+- `regulatory/airmart-regulatory-posture.yml` — no horizontal regulatory signals published (probed)
+- `llms/airmart-llms.txt` — generated from this profile
