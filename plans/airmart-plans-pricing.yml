@@ -56,3 +56,29 @@ probes:
 - url: https://shop.goairmart.com/en/s/paywall/plan
   status: 200
   note: in-app plan picker, JS-rendered
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Basic
+    access: free
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Standard
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Premium
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
