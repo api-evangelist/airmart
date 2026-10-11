@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "airmart",
+    "captured_at": "2026-10-11T140424",
+    "source_url": "https://www.goairmart.com/",
+    "source_type": "Website",
+    "file": "airmart-2026-10-11T140424.png",
+    "bytes": 182103,
+    "capture": "playwright-local"
+  }
+]
