@@ -2,13 +2,6 @@
   "repo": "airmart",
   "feeds": [
     {
-      "source": "https://www.goairmart.com/",
-      "feed_url": "https://www.goairmart.com/",
-      "title": "",
-      "saved": 0,
-      "method": "none"
-    },
-    {
       "source": "https://goairmart.com/articles/",
       "feed_url": "https://goairmart.com/articles/feed/",
       "title": "",
@@ -21,8 +14,15 @@
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://www.goairmart.com/",
+      "feed_url": "https://www.goairmart.com/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 2,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
